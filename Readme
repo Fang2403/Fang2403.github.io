@@ -1,0 +1,5 @@
+# Customization
+
+- file `_config.yml` for names 
+- file `_index.md` for home page
+- folder `_posts` for blog posts
