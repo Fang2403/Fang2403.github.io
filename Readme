@@ -1,5 +1,15 @@
 # Customization
 
+## setting up names in the home page
+
 - file `_config.yml` for names 
+
+## setting up home page
+
 - file `_index.md` for home page
+
+## editing posts
+
 - folder `_posts` for blog posts
+
+- Blog post files should always be named using this format: `yyyy-mm-dd-your-blog-post-name.md`
