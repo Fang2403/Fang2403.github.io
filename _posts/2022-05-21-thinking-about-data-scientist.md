@@ -10,7 +10,7 @@ A good data scientist should have solid computer science, statistics, and specif
 
 Source: [Towards Data Science](https://towardsdatascience.com/the-data-science-process-a19eb7ebc41b)
 
-# Major Duties and knowledge areas
+# Major Duties and Knowledge Areas
 
 ## Duties
 
@@ -24,7 +24,7 @@ The role typically demands:
 * Develop predictive models to optimize decisions
 * Communicate results and statistical concepts to key business leaders
 
-## knowledge areas
+## Knowledge areas
 
 The role needs strong knowledge of:
 
@@ -36,7 +36,7 @@ The role needs strong knowledge of:
 
 Source: [Drew Conway](http://drewconway.com/zia/2013/3/26/the-data-science-venn-diagram)
 
-# differences between data scientists and statisticians
+# Differences Between Ddata Scientists and Statisticians
 
 1. The type of problems focused:
 Data scientists focus on solving specific problems, while the statisticians focus more on the academic statistics. 
@@ -50,12 +50,12 @@ Data scientists are well-equipped to ingest, clean and transform large-scale rea
 4. Modeling process:
 Data scientists compare the predictive accuracy of different algorithms to select the model with the best accuracy. On the other hand, statisticians improve a single simple model by addressing assumptions in the model that are violated to best fit the data.
 
-# similarities  between data scientists and statisticians
+# Similarities Between Data Scientists and Statisticians
 
 Data scientists and statisticians all aim to extract insights through description, prediction and causal inference from data. 
 They both need a decent statistics background to fully understand the science behind their work, programming languages and models to analyze data and provide predictions.
 
-# About myself
+# About Myself
 
 I did my first graduate in mathematics and am doing my second graduate in statistics, so this part is my strong suit. However, programming and communication through English are not. For this reason, I think I am more suitable to be a statistician. Meanwhile I enjoy learning programming and really hope to tackle large-scale real-word data to enhance decisions and provide predictions. So I am more hoping to change my career into the data science field.  
 
