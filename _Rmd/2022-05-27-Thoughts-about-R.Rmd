@@ -4,6 +4,7 @@ author: "Fang Wu"
 date: '2022-05-27'
 ---
 
+
 ## Thoughts About R Compared to Other Programming Lanuage
 
 * What are your thoughts on R vs whatever other software you've used?  
@@ -23,6 +24,10 @@ Python is more powerful on handling big data.
 No.
 
 ## R Markdown Output
+
+```{r}
+knitr::opts_chunk$set(fig.path = "../images")
+```
 
 ```{r}
 plot(iris$Sepal.Length)
