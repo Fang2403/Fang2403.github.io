@@ -26,7 +26,7 @@ No.
 ## R Markdown Output
 
 ```{r}
-knitr::opts_chunk$set(fig.path = "../images/")
+knitr::opts_chunk$set(fig.path = "../")
 ```
 
 ```{r}
