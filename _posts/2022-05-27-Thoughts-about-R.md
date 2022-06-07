@@ -26,11 +26,11 @@ No.
 ## R Markdown Output
 
 ``` r
-knitr::opts_chunk$set(fig.path = "../_images")
+knitr::opts_chunk$set(fig.path = "../")
 ```
 
 ``` r
 plot(iris$Sepal.Length)
 ```
 
-![](../_imagesunnamed-chunk-6-1.png)<!-- -->
+![](../unnamed-chunk-2-1.png)<!-- -->
