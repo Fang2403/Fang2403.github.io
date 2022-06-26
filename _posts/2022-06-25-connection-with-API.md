@@ -26,5 +26,6 @@ In the future I won’t define the function at the very beginning, I will do thi
 
 In the future if I work on a similar project, I also want to give the package quantmod (Quantitative Financial Modeling Framework) a shot. 
 
-[Link to my github pages]()
-[Link to my github repo]()
+[Link to my github pages](https://fang2403.github.io/Vignette-for-reading-and-summarizing-data-from-API/)
+
+[Link to my github repo](https://github.com/Fang2403/Vignette-for-reading-and-summarizing-data-from-API)
