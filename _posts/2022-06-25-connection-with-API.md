@@ -6,7 +6,7 @@ I wrote a vignette to explain how I collect and perform basic EDA on stock data 
 
 Process
 
-There are two main sessions in the vignette.  In the first session, I built a few user-friendly functions to interact with the Polygon API to query, parse, and return well-formatted data. These functions all allow users to customize their query to return specific data. Users can query ticker types, ticker symbols, specific historical stock data and grouped daily data from Polygon.io through these defined functions. Alternative methods like wrapper function and parallel computing process are also provided.
+There are two main sessions in the vignette.  In the first session, I built a few user-friendly functions to interact with the Polygon API to query, parse, and return well-formatted data. These functions all allow users to customize their query to return specific data. Users can query ticker types, ticker symbols, specific historical stock data and grouped daily data from Polygon.io through these defined functions. Alternative methods like wrapper function is also provided.
 
 In the second session, I performed a basic exploratory data analysis (EDA) on historical stock data for companies – Apple, Google, Tesla, and Zoom. I analyzed their close price, returns, and moving prices to find some interesting trends and relationships. Contingency tables, descriptive statistics, plots are used to show the trends, patterns, and characters of the data.  
 
