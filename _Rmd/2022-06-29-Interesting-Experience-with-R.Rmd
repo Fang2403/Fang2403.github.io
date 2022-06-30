@@ -1,0 +1,18 @@
+---
+title: Interesting Programming Experience Using R
+author: Fang Wu
+---
+
+```{r knit, echo=FALSE, eval=FALSE}
+#getwd()
+rmarkdown::render("_Rmd/2022-06-29-Interesting-Experience-with-R.Rmd", output_dir =  "../_posts/", output_format = "github_document", output_options = list(html_preview=FALSE))
+```
+
+```{r render, eval=FALSE, echo=FALSE}
+rmarkdown::render("_Rmd/2022-05-27-Thoughts-about-R.Rmd", output_format="github_document", output_dir = "/NCSU/Git/Fang2403_io/_posts/", output_options = list(html_preview = FALSE))
+```
+
+```{r setup}
+knitr::opts_chunk$set(fig.path = "../images/")
+```
+
