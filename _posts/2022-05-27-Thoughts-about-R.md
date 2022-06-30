@@ -33,4 +33,4 @@ knitr::opts_chunk$set(fig.path = "../")
 plot(iris$Sepal.Length)
 ```
 
-![](../unnamed-chunk-6-1.png)<!-- -->
+![](../unnamed-chunk-2-1.png)<!-- -->
