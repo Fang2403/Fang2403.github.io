@@ -8,10 +8,6 @@ author: Fang Wu
 rmarkdown::render("_Rmd/2022-06-29-Interesting-Experience-with-R.Rmd", output_dir =  "_posts/", output_format = "github_document", output_options = list(html_preview=FALSE))
 ```
 
-```{r render, eval=FALSE, echo=FALSE}
-rmarkdown::render("_Rmd/2022-05-27-Thoughts-about-R.Rmd", output_format="github_document", output_dir = "/NCSU/Git/Fang2403_io/_posts/", output_options = list(html_preview = FALSE))
-```
-
 ```{r setup, echo=FALSE}
 knitr::opts_chunk$set(fig.path = "../images/", message = FALSE)
 ```
@@ -27,7 +23,7 @@ library(tidyverse)
 library(caret)
 ```
 * Read in data
- 
+
 ```{r}
 data <- read_csv("../../../558 data science for statistician/HW/module 8/SeoulBikeData.csv", col_names=TRUE, locale=locale(encoding="latin1")) 
 data_convention <- data %>% rename(Rented_count=`Rented Bike Count`, Wind_speed=`Wind speed (m/s)`,
