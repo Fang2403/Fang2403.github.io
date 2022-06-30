@@ -5,14 +5,81 @@ author: Fang Wu
 
 ```{r knit, echo=FALSE, eval=FALSE}
 #getwd()
-rmarkdown::render("_Rmd/2022-06-29-Interesting-Experience-with-R.Rmd", output_dir =  "../_posts/", output_format = "github_document", output_options = list(html_preview=FALSE))
+rmarkdown::render("_Rmd/2022-06-29-Interesting-Experience-with-R.Rmd", output_dir =  "_posts/", output_format = "github_document", output_options = list(html_preview=FALSE))
 ```
 
 ```{r render, eval=FALSE, echo=FALSE}
 rmarkdown::render("_Rmd/2022-05-27-Thoughts-about-R.Rmd", output_format="github_document", output_dir = "/NCSU/Git/Fang2403_io/_posts/", output_options = list(html_preview = FALSE))
 ```
 
-```{r setup}
-knitr::opts_chunk$set(fig.path = "../images/")
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.path = "../images/", message = FALSE)
 ```
 
+## Coolest thing about programming in R.
+
+I think package `caret` is really cool, as it put everything we need to fit model in one package and make the processing really simply and straight forward. Especially, we can put pre processing of data in function `train` to ensure that the test set got the exactly same transformation as the train set. We also can specify the model method, cross validation argument etc. in function `train`. It is also very easy for compare metric for diffetent models.
+
+One example:
+
+```{r echo=FALSE}
+library(tidyverse)
+library(caret)
+```
+* Read in data
+ 
+```{r}
+data <- read_csv("../../../558 data science for statistician/HW/module 8/SeoulBikeData.csv", col_names=TRUE, locale=locale(encoding="latin1")) 
+data_convention <- data %>% rename(Rented_count=`Rented Bike Count`, Wind_speed=`Wind speed (m/s)`,
+                                   Dew_temperature=`Dew point temperature(°C)`,
+                                   Temperature=`Temperature(°C)`,
+                                   Humidity=`Humidity(%)`, Radiation=`Solar Radiation (MJ/m2)`,
+                                   Functioning_day=`Functioning Day`,
+                                   Visibility=`Visibility (10m)`, Rainfall=`Rainfall(mm)`,
+                                   Snowfall=`Snowfall (cm)`)
+data$Date <- as.Date(data_convention$Date, "%d/%m/%Y")
+data_convention
+```
+
+* Split data using function `createDataPartition` from package `caret`
+
+```{r}
+set.seed(100)
+train_index <- createDataPartition(data_convention$Functioning_day, p=0.75, list=FALSE)
+train_data <- data_convention[train_index, ]
+test_data <- data_convention[-train_index, ]
+```
+
+* MLR Modeling with cross validation
+
+I am going to involve Hour, Temperature, Radiation, Visibility, Seasons and Holiday based on correlation between continuous variables. 
+
+```{r}
+lrfit1 <- train(Rented_count~Hour+Temperature+Seasons+Holiday+Functioning_day, data=train_data,
+               method="lm",
+               trControl=trainControl(method="cv", number=5))
+lrfit2 <- train(Rented_count~Hour*Temperature+Seasons+Holiday+Functioning_day, data=train_data,
+               method="lm",
+               preProcess=c("center", "scale"),
+               trControl=trainControl(method="cv", number=5))
+lrfit3 <- train(Rented_count~Hour+Temperature++Radiation+Seasons+Holiday+Functioning_day, data=train_data,
+               method="lm",
+               preProcess=c("center", "scale"),
+               trControl=trainControl(method="cv", number=5))
+lrfit4 <- train(Rented_count~Hour+Temperature+Visibility+Seasons+Holiday+Functioning_day, data=train_data,
+               method="lm",
+               preProcess=c("center", "scale"),
+               trControl=trainControl(method="cv", number=5))
+lrfit5 <- train(Rented_count~Hour*Temperature+Seasons+Visibility+Seasons+Holiday+Functioning_day, data=train_data,
+               method="lm",
+               preProcess=c("center", "scale"),
+               trControl=trainControl(method="cv", number=5))
+```
+
+* Compare metric
+
+```{r}
+results <- data.frame(t(lrfit1$results), t(lrfit2$results), t(lrfit3$results), t(lrfit4$results), t(lrfit5$results))
+names(results)=c("fit1", "fit2", "fit3", "fit4", "fit5" )
+results
+```
