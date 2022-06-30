@@ -34,6 +34,6 @@ plot(iris$Sepal.Length)
 ```
 
 ```{r render, eval=FALSE, echo=FALSE}
-rmarkdown::render("_Rmd/2022-05-27-Thoughts-about-R.Rmd", output_format="github_document", output_dir = "/_posts/", output_options = list(html_preview = FALSE))
+rmarkdown::render("_Rmd/2022-05-27-Thoughts-about-R.Rmd", output_format="github_document", output_dir = "/NCSU/Git/Fang2403_io/_posts/", output_options = list(html_preview = FALSE))
 ```
 
