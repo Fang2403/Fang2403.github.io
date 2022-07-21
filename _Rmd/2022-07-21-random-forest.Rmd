@@ -12,7 +12,6 @@ rmarkdown::render("_Rmd/2022-07-21-random-forest.Rmd", output_dir =  "_posts/", 
 knitr::opts_chunk$set(fig.path = "../images/", message = FALSE)
 ```
 
-## Random Forest
 
 Random forest models are based on simple tree model. Trees are very easily interpreted by looking at the tree plot. However, they are highly variable based on the specific data used to build them. Random forest models are one way to combat this.
 
@@ -60,7 +59,7 @@ CV error on train data
 fit$results
 ```
 
-# Subsetting randomly 3 predictors for each tree leads to best accuracy for the train data.
+* Subsetting randomly 3 predictors for each tree leads to best accuracy for the train data.
 
 performance on test data
 

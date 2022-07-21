@@ -2,8 +2,6 @@ Random Forest
 ================
 Fang Wu
 
-## Random Forest
-
 Random forest models are based on simple tree model. Trees are very
 easily interpreted by looking at the tree plot. However, they are highly
 variable based on the specific data used to build them. Random forest
@@ -69,7 +67,8 @@ fit$results
     ## 2 0.001357060 0.011025773
     ## 3 0.001023076 0.012404580
 
-# Subsetting randomly 3 predictors for each tree leads to best accuracy for the train data.
+-   Subsetting randomly 3 predictors for each tree leads to best
+    accuracy for the train data.
 
 performance on test data
 
