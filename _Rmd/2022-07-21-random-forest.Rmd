@@ -1,0 +1,72 @@
+---
+title: Random Forest
+author: Fang Wu
+---
+
+```{r knit, echo=FALSE, eval=FALSE}
+#getwd()
+rmarkdown::render("_Rmd/2022-07-21-random-forest.Rmd", output_dir =  "_posts/", output_format = "github_document", output_options = list(html_preview=FALSE))
+```
+
+```{r setup, echo=FALSE}
+knitr::opts_chunk$set(fig.path = "../images/", message = FALSE)
+```
+
+## Random Forest
+
+Random forest models are based on simple tree model. Trees are very easily interpreted by looking at the tree plot. However, they are highly variable based on the specific data used to build them. Random forest models are one way to combat this.
+
+Random forest models use bootstrap sampling to fit many trees, each one using a random subset of predictors. Final prediction is the mean or majority vote. The random subset procedure makes the predictions are not dominated by some specific predictors.
+
+The standard practice is to use $p/3$ for numeric response and $\sqrt(n)$ for categorical response, where p represents the total number of predictors. 
+
+I am going to build a random forest model on a data set from [Kaggle](https://www.kaggle.com/datasets/sameepvani/nasa-nearest-earth-objects). This data set compiles the list of NASA certified asteroids that are classified as the nearest earth object. I would like to predict hazardous based on the available predictors.
+
+Importing packages
+
+```{r echo=FALSE}
+library(tidyverse)
+library(caret)
+```
+
+Reading in data
+
+```{r}
+data <- read_csv("../data/neo.csv", col_names=TRUE) %>% select(-c(id,name, orbiting_body))
+data$hazardous <- as.factor(data$hazardous)
+```
+
+Spliting data into train and test sets
+
+```{r}
+set.seed(100)
+train_index <- createDataPartition(data$hazardous, p=0.7, list=FALSE)
+train_data <- data[train_index, ]
+test_data <- data[-train_index, ]
+```
+
+Building random forest model
+
+```{r}
+fit <- train(hazardous~., train_data, method="rf",
+             trControl=trainControl(method="cv", number=5),
+             tuneGrid=data.frame(mtry=3:5),
+             ntree=50)
+```
+
+CV error on train data
+
+```{r}
+fit$results
+```
+
+# Subsetting randomly 3 predictors for each tree leads to best accuracy for the train data.
+
+performance on test data
+
+```{r}
+fitValue <- predict(fit, data.frame(test_data))
+confusionMatrix(fitValue, test_data$hazardous)
+```
+
+* Accuracy on test data is even better than on train data. 
