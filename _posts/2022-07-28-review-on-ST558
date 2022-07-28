@@ -1,0 +1,6 @@
+## Using R for Data Science
+In my opinion, R is wonderful for data science. With vibrant community support, it is a pwerful tool to analyze data and build models. There are tons of shared packages to deal with various data problems effeciently. However, it is said to be slow with big data, I haven't had experience using R with big data and stream data though. As in dustry, lots of data science problems are with big or stream data now, I definetely want to try using R with them and search for speeding up methods. I have good experience with R so far, and I want to know how it is working with more complex data. So I will continue to use R going forward at least for a while.    
+## In practice
+I used to do inference work with R and analysis and modles building with Python. From now on, I will also use R to conduct the whole project. More important is that now I know how to create dashboards with R and deploy, share them. In the future, I will try to make more dashboard with R and also try to work with docker and R. 
+## Futrure Plan
+I am planing to focus on building proper model based on data feature in the future. I am felling so excited when gaining precise predictions or finding the hidden pattern or relationship in the data. It is so amazing to explore the hidden insights behind the complex data.   
